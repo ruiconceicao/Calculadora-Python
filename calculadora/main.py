@@ -11,7 +11,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.title("my app")
+        self.title("Calculadora")
         self.geometry("400x180")
         
         self.resFrame = MyResFrame(self)
