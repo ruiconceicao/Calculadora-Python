@@ -14,7 +14,6 @@ class App(ctk.CTk):
         self.title("my app")
         self.geometry("400x180")
         
-
         self.resFrame = MyResFrame(self)
         self.resFrame.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="new")
         self.grid_columnconfigure(0, weight=1)
@@ -24,7 +23,6 @@ class App(ctk.CTk):
         self.buttonFrame.grid(row=1, column=0, padx=10, pady=(10, 0), sticky="new")
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(1, weight=1)
-
 
 class MyResFrame(ctk.CTkFrame):
     def __init__(self, master):
