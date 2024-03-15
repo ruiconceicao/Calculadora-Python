@@ -29,7 +29,7 @@ class MyResFrame(ctk.CTkFrame):
         super().__init__(master)
 
         self.resLabel = ctk.CTkLabel(self, text="0")
-        self.resLabel.pack(self, expand=True, pady=20, padx=20)
+        self.resLabel.pack(expand=True, pady=20, padx=20)
 
 class MyButtonFrame(ctk.CTkFrame):
     def __init__(self, master):
