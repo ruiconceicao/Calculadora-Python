@@ -93,8 +93,7 @@ class MyButtonFrame(ctk.CTkFrame):
         self.btnequal.grid(row=6, column=3, sticky="new", padx=1, pady=5)
 
     def button_callback(self, btn_number):
-            self.resLabel.configure(text=("{}".format(btn_number)))
-            print("{}".format(btn_number))
+            self.resLabel.configure(text=("{}{}".format(self.resLabel.cget("text"), btn_number)))
 
 app = App()
 app.mainloop()
