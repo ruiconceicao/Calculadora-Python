@@ -66,9 +66,9 @@ class MyFrame(ctk.CTkFrame):
         self.btnerase = ctk.CTkButton(self, text="←", font=("Roboto", 30), corner_radius=100, width=80, height=40, fg_color="#808080", text_color="black", border_color="black", border_width=1, hover_color="#a6a6a6",
             command=lambda: self.btn_erase(self.resLabel.cget("text")))
         self.btndivide = ctk.CTkButton(self, text="÷", font=("Roboto", 30), corner_radius=100, width=80, height=40, fg_color="#e0810d", text_color="white", border_color="black", border_width=1, hover_color="#f4a23e",
-            command=lambda: self.btn_click("/"))
+            command=lambda: self.btn_click(self.btndivide.cget("text")))
         self.btntimes = ctk.CTkButton(self, text="x", font=("Roboto", 30), corner_radius=100, width=60, height=40, fg_color="#e0810d", text_color="white", border_color="black", border_width=1, hover_color="#f4a23e",
-            command=lambda: self.btn_click("*"))
+            command=lambda: self.btn_click(self.btntimes.cget("text")))
         self.btnminus = ctk.CTkButton(self, text="-", font=("Roboto", 30), corner_radius=100, width=60, height=40, fg_color="#e0810d", text_color="white", border_color="black", border_width=1, hover_color="#f4a23e",
             command=lambda: self.btn_click(self.btnminus.cget("text")))
         self.btnplus = ctk.CTkButton(self, text="+", font=("Roboto", 30), corner_radius=100, width=60, height=40, fg_color="#e0810d", text_color="white", border_color="black", border_width=1, hover_color="#f4a23e",
@@ -117,8 +117,9 @@ class MyFrame(ctk.CTkFrame):
 
     def btn_equal(self, conta):
         try:
-            self.contaLabel.configure(text=("{}".format(conta)))
+            # substitute "*" for x and "/" for ÷
             self.resLabel.configure(text=("{}".format(eval(conta))))
+            self.contaLabel.configure(text=("{}".format(conta)))
         except:
             self.resLabel.configure(text=("Error"), text_color="red")
 
@@ -139,8 +140,5 @@ class MyFrame(ctk.CTkFrame):
         self.contaLabel.configure(text="")
         self.resLabel.configure(text="", text_color="white")
     
-    # fazer função paa substituir os * e o / na contaLabel
-
-
 app = App()
 app.mainloop()
