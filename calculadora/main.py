@@ -5,6 +5,7 @@ operações matemáticas servindo então como calculadora.
 Programa criado a 13/03/24 às 13:00
 Rui Conceição
 '''
+from pickle import FALSE
 import customtkinter as ctk
 
 
@@ -14,8 +15,7 @@ class App(ctk.CTk):
 
         self.title("Calculadora")
         self._set_appearance_mode("dark")
-        self.minsize
-        self.maxsize
+        self.resizable(width=False, height=False)
 
         self.buttonFrame = MyFrame(self)
         self.buttonFrame.pack(pady=10, padx=10, anchor="nw")
